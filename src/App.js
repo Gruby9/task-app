@@ -14,7 +14,8 @@ class Input extends React.Component {
     super(props);
 
     this.state = {
-      val: ''
+      val: '',
+      arr: []
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -23,7 +24,8 @@ class Input extends React.Component {
 
   onButtonClick() {
     console.log(this.state.val)
-    // Overview.add(this.state.val)
+    this.state.arr.push(this.state.val)
+    this.setState({val: ''})
   }
 
   handleChange(event) {
@@ -35,12 +37,10 @@ class Input extends React.Component {
       <div>
         <input type="text" onChange={this.handleChange} />
         <button onClick={this.onButtonClick}>Submit</button>
-        <Overview title={this.state.val} />
+        <Overview title={this.state.arr} />
       </div>
     )
   }  
 }
-// const e = [App, Input]
+
 export default Input
-// export default App
-// export {App, Input}

@@ -4,20 +4,15 @@ class Overview extends React.Component {
     constructor(props,) {
         super(props)
 
-        this.state = {
-            arr: []
-        }
-
-        this.add = this.add.bind(this)
-    }
-
-    add(x) {
-        this.state.arr.push(x)
     }
 
     render () {
         return (
-            <p>{this.state.arr}</p>
+            <ul>
+                {this.props.title.map((t) => {
+                    return <li key={t} ></li>
+                })}
+            </ul>
         )
     }
 }
